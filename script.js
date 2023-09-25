@@ -4,7 +4,7 @@ const allOptions = document.querySelectorAll('.option')
 const allBackModalOptions = [
   ...document.querySelectorAll('.back-modal .option'),
 ]
-const allInputFields = document.querySelectorAll('input#pledge')
+const allInputFields = document.querySelectorAll('input.pledge')
 const allPledgeEls = document.querySelectorAll('.back-modal .option-pledge')
 const allErrors = document.querySelectorAll('.error')
 
@@ -166,7 +166,7 @@ backModal.addEventListener('submit', (e) => {
     el.classList.remove('mark-red')
   })
 
-  const input = e.target.querySelector('#pledge')
+  const input = e.target.querySelector('.pledge')
   const option = input.closest('.option').getAttribute('data-option')
 
   const isValid = validateInput(input)
@@ -226,7 +226,7 @@ function selectProduct(product) {
   product.setAttribute('aria-selected', 'true')
   product.querySelector('.expandable-wrapper').classList.add('open')
   product.scrollIntoView({ behavior: 'smooth', block: 'center' })
-  product.querySelector('#pledge').focus()
+  product.querySelector('.pledge').focus()
 }
 
 function validateInput(input) {
